@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BrainRoyan</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #cfcfcf;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: #ffffff;
+      width: 360px;
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .title {
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .info {
+      font-size: 14px;
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+
+    img {
+      width: 90px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .overlay img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CARD 1 -->
+  <div class="card">
+    <div class="title">Brainrot · Secret · Orcaledon · 750–999 M/s</div>
+    <div class="subtitle">Orcaledon | Radioactive · 980M/S | Fast Delivery ✅</div>
+
+    <div class="content">
+      <div class="info">
+        <div>JoniG ✔</div>
+        <div class="price">40 €</div>
+        <div>⏱ 20 min.</div>
+      </div>
+
+      <img src="https://assetsdelivery.eldorado.gg/v7/_offers-v2_/ed433df8-64ab-4c8c-9921-d57456c296b7_Offer_20260110204215_2628620Large.jpeg?w=255" class="thumb" />
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="card">
+    <div class="title">Ginger Sekolah · Secret · Orcaledon · 900 M/s</div>
+    <div class="subtitle">Ginger Sekolah | 900M/S | Fast Delivery ✅</div>
+
+    <div class="content">
+      <div class="info">
+        <div>JoniG ✔</div>
+        <div class="price">40 €</div>
+        <div>⏱ 20 min.</div>
+      </div>
+
+      <img src="https://assetsdelivery.eldorado.gg/v7/_offers-v2_/289e0cbc-d5b1-44ac-899a-900319304d5c_Offer_20260116065745_1663765Large.jpg?w=255" class="thumb" />
+    </div>
+  </div>
+
+  <!-- CARD 3 -->
+  <div class="card">
+    <div class="title">Swaggy Bros · Secret · Orcaledon · 970 M/s</div>
+    <div class="subtitle">Swaggy Bros | 970M/S | Fast Delivery ✅</div>
+
+    <div class="content">
+      <div class="info">
+        <div>JoniG ✔</div>
+        <div class="price">45 €</div>
+        <div>⏱ 20 min.</div>
+      </div>
+
+      <img src="https://assetsdelivery.eldorado.gg/v7/_offers-v2_/8d439abf-f76b-4e09-b6c9-10d751e32315_Offer_20260111192318_6488280Large.png?w=255" class="thumb" />
+    </div>
+  </div>
+
+  <!-- OVERLAY -->
+  <div class="overlay" id="overlay">
+    <img src="" alt="Image agrandie">
+  </div>
+
+  <script>
+    const thumbs = document.querySelectorAll('.thumb');
+    const overlay = document.getElementById('overlay');
+    const overlayImg = overlay.querySelector('img');
+
+    thumbs.forEach(img => {
+      img.onclick = () => {
+        overlayImg.src = img.src.replace('w=255', '');
+        overlay.style.display = 'flex';
+      };
+    });
+
+    overlay.onclick = () => overlay.style.display = 'none';
+  </script>
+
+</body>
+</html>
